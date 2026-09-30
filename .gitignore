@@ -1,0 +1,12 @@
+# Arquivos de IDE
+.idea/
+*.iml
+
+# Saídas de compilação e dependências
+build/
+.gradle/
+captures/
+.DS_Store
+
+# (Opcional) Chaves de assinatura - cuidado se o repositório for público!
+# *.keystore

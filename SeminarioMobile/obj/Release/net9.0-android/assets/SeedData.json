@@ -1,0 +1,98 @@
+{
+  "locais": [
+    {
+      "nome": "CARIACICA - ES",
+      "id": 1
+    },
+    {
+      "nome": "DOMINGOS MARTINS - ES",
+      "id": 2
+    },
+    {
+      "nome": "PEDRO DO RIO - RJ",
+      "id": 3
+    },
+    {
+      "nome": "QUELUZ",
+      "id": 4
+    },
+    {
+      "nome": "VIDREIRA - SÃO GONÇALO - RJ",
+      "id": 5
+    }
+  ],
+  "classes": [
+    {
+      "nome": "1º PERÍODO",
+      "id": 7
+    },
+    {
+      "nome": "2º PERÍODO",
+      "id": 1
+    },
+    {
+      "nome": "2º PERÍODO, ACESSIBILIDADE",
+      "id": 4
+    },
+    {
+      "nome": "2º PERÍODO, GR. LOUVOR/INSTRU.",
+      "id": 3
+    },
+    {
+      "nome": "2º PERÍODO/ACESSIBILIDADE",
+      "id": 2
+    },
+    {
+      "nome": "3º PERÍODO",
+      "id": 9
+    },
+    {
+      "nome": "4º PERÍODO",
+      "id": 8
+    },
+    {
+      "nome": "5º PERÍODO",
+      "id": 10
+    },
+    {
+      "nome": "6º PERÍODO",
+      "id": 11
+    },
+    {
+      "nome": "7º PERÍODO",
+      "id": 12
+    },
+    {
+      "nome": "GRUPO DE LOUVOR",
+      "id": 14
+    },
+    {
+      "nome": "JOVENS",
+      "id": 13
+    },
+    {
+      "nome": "PRINCIPIANTES",
+      "id": 6
+    }
+  ],
+  "igrejas": [
+    {
+      "nome": "ICM HELIÓPOLIS",
+      "id": 3,
+      "ativo": false
+    },
+    {
+      "nome": "ICM HINTERLAND",
+      "id": 1,
+      "ativo": true
+    }
+  ],
+  "observacoes": [
+    {
+      "texto": "Os valores referem-se apenas à estadia, não incluindo transporte.",
+      "id": 1,
+      "ativo": true
+    }
+  ],
+  "seminarios": []
+}

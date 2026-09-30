@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SeminarioMobile.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:SeminarioMobile.Views"
+    Title="Painel de Seminários"
+    FlyoutBehavior="Flyout"
+    FlyoutWidth="160"
+    FlyoutBackgroundColor="#F8FAFC">
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="150" Background="{StaticResource GradienteSeminarios}">
+            <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="6">
+                <Label Text="🗓️" FontSize="36" HorizontalOptions="Center" />
+                <Label Text="Painel&#10;de Seminários" TextColor="White" FontSize="17" FontAttributes="Bold"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="12,12" ColumnDefinitions="22,*" ColumnSpacing="10">
+                <Image Source="{Binding FlyoutIcon}" WidthRequest="22" HeightRequest="22" VerticalOptions="Center" Aspect="AspectFit" />
+                <Label Grid.Column="1" Text="{Binding Title}" TextColor="#1E293B" FontSize="13.5" FontAttributes="Bold" VerticalOptions="Center" LineBreakMode="TailTruncation" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout>
+            <BoxView HeightRequest="1" Color="#E2E8F0" Margin="12,0" />
+            <Grid Padding="12,12" ColumnDefinitions="22,*" ColumnSpacing="10">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSairTapped" />
+                </Grid.GestureRecognizers>
+                <Image Source="icone_sair.svg" WidthRequest="22" HeightRequest="22" VerticalOptions="Center" Aspect="AspectFit" />
+                <Label Grid.Column="1" Text="Sair" TextColor="#DC2626" FontSize="13.5" FontAttributes="Bold" VerticalOptions="Center" />
+            </Grid>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem Title="Maanaim" Icon="icone_maanaim.svg">
+        <ShellContent Title="📍 Maanaim" ContentTemplate="{DataTemplate views:MaanaimPage}" Route="maanaim" />
+    </FlyoutItem>
+    <FlyoutItem Title="Classes" Icon="icone_classes.svg">
+        <ShellContent Title="🎓 Classes" ContentTemplate="{DataTemplate views:ClassesPage}" Route="classes" />
+    </FlyoutItem>
+    <FlyoutItem Title="Seminários" Icon="icone_seminarios.svg">
+        <ShellContent Title="🗓️ Seminários" ContentTemplate="{DataTemplate views:SeminariosPage}" Route="seminarios" />
+    </FlyoutItem>
+    <FlyoutItem Title="Igrejas" Icon="icone_igreja.svg">
+        <ShellContent Title="Igrejas" ContentTemplate="{DataTemplate views:IgrejasPage}" Route="igrejas" />
+    </FlyoutItem>
+    <FlyoutItem Title="Observações" Icon="icone_observacoes.svg">
+        <ShellContent Title="📝 Observações" ContentTemplate="{DataTemplate views:ObservacoesPage}" Route="observacoes" />
+    </FlyoutItem>
+    <FlyoutItem Title="Banner" Icon="icone_banner.svg">
+        <ShellContent Title="📣 Banner" ContentTemplate="{DataTemplate views:BannerPage}" Route="banner" />
+    </FlyoutItem>
+
+</Shell>

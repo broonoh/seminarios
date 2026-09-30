@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SeminarioMobile.Views.BannerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:SeminarioMobile.ViewModels"
+    xmlns:models="clr-namespace:SeminarioMobile.Models"
+    x:Name="RaizPagina"
+    x:DataType="vm:BannerViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16">
+
+            <Border Style="{StaticResource HeaderCardStyle}" Background="{StaticResource GradienteBanner}">
+                <HorizontalStackLayout Spacing="14">
+                    <Button Style="{StaticResource MenuButtonStyle}" Clicked="OnMenuClicked" />
+                    <Label Text="📣" Style="{StaticResource HeaderIconStyle}" VerticalOptions="Center" />
+                    <Label Text="Banner" Style="{StaticResource HeaderTitleStyle}" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource CardStyle}">
+                <VerticalStackLayout Spacing="18">
+                    <Label Text="Gerar banner de divulgação" FontSize="18" FontAttributes="Bold" TextColor="#10B981" HorizontalOptions="Center" />
+                    <Label Text="Gera uma imagem com os seminários do mês selecionado, pronta para enviar no WhatsApp ou postar nas redes." FontSize="12" TextColor="#64748b" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never" HorizontalOptions="Fill">
+                        <HorizontalStackLayout Spacing="8" BindableLayout.ItemsSource="{Binding Meses}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="models:MesOpcao">
+                                    <Border StrokeShape="RoundRectangle 16" Padding="14,8"
+                                            Background="{Binding Selecionado, Converter={StaticResource SelecionadoParaCorConverter}}">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.SelecionarMesCommand}"
+                                                CommandParameter="{Binding .}" />
+                                        </Border.GestureRecognizers>
+                                        <Label Text="{Binding Rotulo}" FontAttributes="Bold" FontSize="13"
+                                               TextColor="{Binding Selecionado, Converter={StaticResource SelecionadoParaCorConverter}, ConverterParameter=texto}" />
+                                    </Border>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </HorizontalStackLayout>
+                    </ScrollView>
+
+                    <Label Text="{Binding QuantidadeSeminarios, StringFormat='{0} seminário(s) neste mês'}" TextColor="#1e293b" HorizontalOptions="Center" />
+
+                    <VerticalStackLayout Spacing="8" HorizontalOptions="Fill">
+                        <Label Text="Modelo do banner" FontSize="13" TextColor="#64748b" HorizontalOptions="Center" />
+                        <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                            <HorizontalStackLayout Spacing="6">
+                                <RadioButton GroupName="TemplateBanner" IsChecked="{Binding TemplateColorido, Converter={StaticResource InversorBoolConverter}}" />
+                                <Label Text="Padrão" TextColor="#1e293b" VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Spacing="6">
+                                <RadioButton GroupName="TemplateBanner" IsChecked="{Binding TemplateColorido}" />
+                                <Label Text="Colorido por seminário" TextColor="#1e293b" VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <ActivityIndicator IsRunning="{Binding Gerando}" IsVisible="{Binding Gerando}" Color="#10B981" />
+
+                    <Image Source="{Binding UltimoCaminhoPng}" Aspect="AspectFit" MaximumHeightRequest="400"
+                           IsVisible="{Binding Gerando, Converter={StaticResource InversorBoolConverter}}" />
+
+                    <Button Text="Compartilhar imagem"
+                            Command="{Binding CompartilharCommand}"
+                            IsEnabled="{Binding Gerando, Converter={StaticResource InversorBoolConverter}}"
+                            BackgroundColor="#10B981" TextColor="White" CornerRadius="14" Padding="18,12" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

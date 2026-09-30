@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="RaizPagina"
+    x:Class="SeminarioMobile.Views.ClassesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:SeminarioMobile.ViewModels"
+    xmlns:models="clr-namespace:SeminarioMobile.Models"
+    x:DataType="vm:ClassesViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <ScrollView x:Name="ScrollPrincipal">
+            <VerticalStackLayout Padding="16" Spacing="16">
+
+                <Border Style="{StaticResource HeaderCardStyle}" Background="{StaticResource GradienteClasses}">
+                    <HorizontalStackLayout Spacing="14">
+                        <Button Style="{StaticResource MenuButtonStyle}" Clicked="OnMenuClicked" />
+                        <Label Text="🎓" Style="{StaticResource HeaderIconStyle}" VerticalOptions="Center" />
+                        <Label Text="Classes" Style="{StaticResource HeaderTitleStyle}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+
+                <Label Text="Cadastre aqui as opções que aparecerão ao criar um seminário." FontSize="12" TextColor="{AppThemeBinding Light=#64748b, Dark=#CBD5E1}" />
+
+                <Border Style="{StaticResource CardStyle}">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="{Binding TituloFormulario}" FontSize="16" FontAttributes="Bold" TextColor="#8B5CF6" />
+                        <Label Text="Nome da classe" FontSize="13" TextColor="#64748b" />
+                        <Label Text="Nomes longos quebram linha automaticamente no banner." FontSize="11" TextColor="#94a3b8" />
+                        <Entry Text="{Binding Nome}" Placeholder="2º PERÍODO" MaxLength="120" TextColor="#1e293b" />
+                        <HorizontalStackLayout Spacing="8">
+                            <Button Text="Salvar" Command="{Binding SalvarCommand}" BackgroundColor="#8B5CF6" TextColor="White" CornerRadius="12" />
+                            <Button Text="Cancelar edição" Command="{Binding CancelarEdicaoCommand}" IsVisible="{Binding EmEdicao}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Classes cadastradas" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#4338CA, Dark=#A5B4FC}" />
+
+                <CollectionView ItemsSource="{Binding Itens}">
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout Padding="24" Spacing="6" HorizontalOptions="Center">
+                            <Label Text="🎓" FontSize="32" HorizontalOptions="Center" />
+                            <Label Text="Nenhuma classe cadastrada ainda" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#475569, Dark=#E2E8F0}" HorizontalOptions="Center" />
+                            <Label Text="Digite o nome acima e toque em Salvar." FontSize="12" TextColor="{AppThemeBinding Light=#94a3b8, Dark=#CBD5E1}" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Classe">
+                            <Border Style="{StaticResource ItemCardStyle}">
+                                <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="10">
+                                    <Label Text="🎓" FontSize="18" VerticalOptions="Center" />
+                                    <Label Grid.Column="1" Text="{Binding Nome}" VerticalOptions="Center" TextColor="#1e293b" FontAttributes="Bold" />
+                                    <Button Grid.Column="2" Text="Editar" Style="{StaticResource EditButtonStyle}"
+                                            Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.EditarCommand}"
+                                            CommandParameter="{Binding .}" />
+                                    <Button Grid.Column="3" Text="Excluir" Style="{StaticResource DeleteButtonStyle}"
+                                            Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.ExcluirCommand}"
+                                            CommandParameter="{Binding .}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button Text="↑" Style="{StaticResource FabStyle}" BackgroundColor="#8B5CF6" Clicked="OnFabClicked" />    </Grid>
+</ContentPage>

@@ -1,0 +1,4 @@
+/home/broonoh/Workspace/SeminarioMobile/SeminarioMobile/bin/Release/net9.0-android/publish/com.companyname.seminariomobile-Signed.aab
+/home/broonoh/Workspace/SeminarioMobile/SeminarioMobile/bin/Release/net9.0-android/publish/com.companyname.seminariomobile.aab
+/home/broonoh/Workspace/SeminarioMobile/SeminarioMobile/bin/Release/net9.0-android/publish/com.companyname.seminariomobile-Signed.apk
+/home/broonoh/Workspace/SeminarioMobile/SeminarioMobile/bin/Release/net9.0-android/publish/_Microsoft.Android.Resource.Designer.dll

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="RaizPagina"
+    x:Class="SeminarioMobile.Views.SeminariosPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:SeminarioMobile.ViewModels"
+    xmlns:models="clr-namespace:SeminarioMobile.Models"
+    x:DataType="vm:SeminariosViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <ScrollView x:Name="ScrollPrincipal">
+            <VerticalStackLayout Padding="16" Spacing="16">
+
+                <Border Style="{StaticResource HeaderCardStyle}" Background="{StaticResource GradienteSeminarios}">
+                    <HorizontalStackLayout Spacing="14">
+                        <Button Style="{StaticResource MenuButtonStyle}" Clicked="OnMenuClicked" />
+                        <Label Text="🗓️" Style="{StaticResource HeaderIconStyle}" VerticalOptions="Center" />
+                        <Label Text="Seminários" Style="{StaticResource HeaderTitleStyle}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                    <HorizontalStackLayout Spacing="8" BindableLayout.ItemsSource="{Binding Meses}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="models:MesOpcao">
+                                <Border StrokeShape="RoundRectangle 16" Padding="14,8"
+                                        Background="{Binding Selecionado, Converter={StaticResource SelecionadoParaCorConverter}}">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.SelecionarMesCommand}"
+                                            CommandParameter="{Binding .}" />
+                                    </Border.GestureRecognizers>
+                                    <Label Text="{Binding Rotulo}" FontAttributes="Bold" FontSize="13"
+                                           TextColor="{Binding Selecionado, Converter={StaticResource SelecionadoParaCorConverter}, ConverterParameter=texto}" />
+                                </Border>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                </ScrollView>
+
+                <Label Text="Preencha os campos abaixo para cadastrar um novo seminário. Os itens marcados com * são obrigatórios." FontSize="12" TextColor="{AppThemeBinding Light=#64748b, Dark=#CBD5E1}" />
+
+                <Border Style="{StaticResource CardStyle}">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="{Binding TituloFormulario}" FontSize="16" FontAttributes="Bold" TextColor="#2563EB" />
+
+                        <Label Text="Maanaim (local do evento) *" FontSize="13" TextColor="#64748b" />
+                        <Grid ColumnDefinitions="*">
+                            <Picker Title="Selecione o Maanaim" ItemsSource="{Binding Locais}" ItemDisplayBinding="{Binding Nome}" SelectedItem="{Binding LocalSelecionado}" TextColor="#1e293b" />
+                        </Grid>
+                        <Label Text="{Binding LocalSelecionado.Nome}" FontSize="12" TextColor="#64748b" LineBreakMode="WordWrap" IsVisible="{Binding LocalSelecionado, Converter={StaticResource NaoNuloParaTrueConverter}}" />
+                        <Label Text="Nenhum Maanaim cadastrado ainda — cadastre um na aba 'Maanaim'." FontSize="11" TextColor="#EA580C" IsVisible="{Binding Locais.Count, Converter={StaticResource ContagemZeroParaTrueConverter}}" />
+
+                        <Label Text="Classe *" FontSize="13" TextColor="#64748b" />
+                        <Grid ColumnDefinitions="*">
+                            <Picker Title="Selecione a classe" ItemsSource="{Binding Classes}" ItemDisplayBinding="{Binding Nome}" SelectedItem="{Binding ClasseSelecionada}" TextColor="#1e293b" />
+                        </Grid>
+                        <Label Text="{Binding ClasseSelecionada.Nome}" FontSize="12" TextColor="#64748b" LineBreakMode="WordWrap" IsVisible="{Binding ClasseSelecionada, Converter={StaticResource NaoNuloParaTrueConverter}}" />
+                        <Label Text="Nenhuma classe cadastrada ainda — cadastre uma na aba 'Classes'." FontSize="11" TextColor="#EA580C" IsVisible="{Binding Classes.Count, Converter={StaticResource ContagemZeroParaTrueConverter}}" />
+
+                        <Label Text="Data do evento (início)" FontSize="13" TextColor="#64748b" />
+                        <DatePicker Date="{Binding DataInicio}" Format="dd/MM/yyyy" TextColor="#1e293b" />
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Switch IsToggled="{Binding TemDataFim}" OnColor="#7C3AED" />
+                            <Label Text="Tem data final (intervalo)" VerticalOptions="Center" TextColor="#1e293b" />
+                        </HorizontalStackLayout>
+                        <DatePicker Date="{Binding DataFim}" Format="dd/MM/yyyy" IsVisible="{Binding TemDataFim}" TextColor="#1e293b" />
+
+                        <Label Text="Inscrições até" FontSize="13" TextColor="#64748b" />
+                        <DatePicker Date="{Binding InscricoesAte}" Format="dd/MM/yyyy" TextColor="#1e293b" />
+
+                        <Label Text="Valor adulto (R$)" FontSize="13" TextColor="#64748b" />
+                        <Entry Text="{Binding ValorAdulto}" Keyboard="Numeric" Placeholder="50,00" TextColor="#1e293b" />
+
+                        <Label Text="Valor criança (R$) — opcional" FontSize="13" TextColor="#64748b" />
+                        <Entry Text="{Binding ValorCrianca}" Keyboard="Numeric" Placeholder="30,00" TextColor="#1e293b" />
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Button Text="Salvar" Command="{Binding SalvarCommand}" BackgroundColor="#2563EB" TextColor="White" CornerRadius="12" />
+                            <Button Text="Cancelar edição" Command="{Binding CancelarEdicaoCommand}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Seminários cadastrados" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#4338CA, Dark=#A5B4FC}" />
+
+                <CollectionView ItemsSource="{Binding ItensFiltrados}">
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout Padding="24" Spacing="6" HorizontalOptions="Center">
+                            <Label Text="🗓️" FontSize="32" HorizontalOptions="Center" />
+                            <Label Text="Nenhum seminário cadastrado ainda" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#475569, Dark=#E2E8F0}" HorizontalOptions="Center" />
+                            <Label Text="Preencha o formulário acima e toque em Salvar." FontSize="12" TextColor="{AppThemeBinding Light=#94a3b8, Dark=#CBD5E1}" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Seminario">
+                            <Border Style="{StaticResource ItemCardStyle}">
+                                <VerticalStackLayout Spacing="4">
+                                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.AlternarExpandidoCommand}"
+                                                CommandParameter="{Binding .}" />
+                                        </Grid.GestureRecognizers>
+                                        <Label Text="🗓️" FontSize="16" VerticalOptions="Start" />
+                                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                            <Label Text="{Binding Classe.Nome}" FontAttributes="Bold" TextColor="#2563EB" LineBreakMode="WordWrap" />
+                                            <Label Text="{Binding Local.Nome}" FontSize="12" TextColor="#475569" />
+                                        </VerticalStackLayout>
+                                        <Label Grid.Column="2" Text="{Binding Expandido, Converter={StaticResource ExpandidoParaSetaConverter}}"
+                                               FontSize="14" TextColor="#94a3b8" VerticalOptions="Start" />
+                                    </Grid>
+
+                                    <VerticalStackLayout Spacing="4" IsVisible="{Binding Expandido}" Margin="0,4,0,0">
+                                        <Label Text="{Binding DataEvento, StringFormat='Data: {0}'}" FontSize="12" TextColor="#1e293b" />
+                                        <Label Text="{Binding InscricoesAte, StringFormat='Inscrições até: {0}'}" FontSize="12" TextColor="#1e293b" />
+                                        <Label Text="{Binding ValorAdulto, StringFormat='Adulto: R$ {0:N2}'}" FontSize="12" TextColor="#16a34a" FontAttributes="Bold" />
+                                        <HorizontalStackLayout Spacing="8" Margin="0,6,0,0">
+                                            <Button Text="Editar" Style="{StaticResource EditButtonStyle}"
+                                                    Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.EditarCommand}"
+                                                    CommandParameter="{Binding .}" />
+                                            <Button Text="Excluir" Style="{StaticResource DeleteButtonStyle}"
+                                                    Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.ExcluirCommand}"
+                                                    CommandParameter="{Binding .}" />
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button Text="↑" Style="{StaticResource FabStyle}" BackgroundColor="#2563EB" Clicked="OnFabClicked" />    </Grid>
+</ContentPage>

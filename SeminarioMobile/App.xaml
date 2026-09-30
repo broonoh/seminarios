@@ -1,0 +1,22 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SeminarioMobile"
+             xmlns:conv="clr-namespace:SeminarioMobile.Converters"
+             x:Class="SeminarioMobile.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <conv:AtivoParaTextoConverter x:Key="AtivoParaTextoConverter" />
+            <conv:AtivoParaCorConverter x:Key="AtivoParaCorConverter" />
+            <conv:InversorBoolConverter x:Key="InversorBoolConverter" />
+            <conv:ContagemZeroParaTrueConverter x:Key="ContagemZeroParaTrueConverter" />
+            <conv:NaoNuloParaTrueConverter x:Key="NaoNuloParaTrueConverter" />
+            <conv:SelecionadoParaCorConverter x:Key="SelecionadoParaCorConverter" />
+            <conv:ExpandidoParaSetaConverter x:Key="ExpandidoParaSetaConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Calendário com check + sino: cadastro/inscrição de seminários com prazo.
+     Formas grossas e poucas peças de propósito — precisa continuar legível em 48px. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <rect width="108" height="108" fill="#2563EB"/>
+
+  <rect x="26" y="24" width="10" height="16" rx="5" fill="#FFFFFF"/>
+  <rect x="58" y="24" width="10" height="16" rx="5" fill="#FFFFFF"/>
+  <rect x="14" y="34" width="70" height="54" rx="10" fill="#FFFFFF"/>
+  <path d="M27,63 L42,78 L71,48" fill="none" stroke="#2563EB" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <circle cx="86" cy="28" r="10" fill="#FFFFFF"/>
+  <path d="M76,28 L96,28 L101,42 L71,42 Z" fill="#FFFFFF"/>
+  <circle cx="86" cy="48" r="4" fill="#FFFFFF"/>
+</svg>

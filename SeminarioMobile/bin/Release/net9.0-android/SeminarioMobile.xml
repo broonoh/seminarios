@@ -1,0 +1,748 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SeminarioMobile</name>
+    </assembly>
+    <members>
+        <member name="T:SeminarioMobile.Models.EventoPortal">
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.Models.EventoPortal.Selecionado">
+            <inheritdoc cref="F:SeminarioMobile.Models.EventoPortal.selecionado"/>
+        </member>
+        <member name="T:SeminarioMobile.Models.MesOpcao">
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.Models.MesOpcao.Selecionado">
+            <inheritdoc cref="F:SeminarioMobile.Models.MesOpcao.selecionado"/>
+        </member>
+        <member name="T:SeminarioMobile.Models.Seminario">
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.Models.Seminario.Expandido">
+            <inheritdoc cref="F:SeminarioMobile.Models.Seminario.expandido"/>
+        </member>
+        <member name="T:SeminarioMobile.ViewModels.BannerViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.Meses">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.BannerViewModel.meses"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.MesSelecionado">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.BannerViewModel.mesSelecionado"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.QuantidadeSeminarios">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.BannerViewModel.quantidadeSeminarios"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.Gerando">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.BannerViewModel.gerando"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.UltimoCaminhoPng">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.BannerViewModel.ultimoCaminhoPng"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.TemplateColorido">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.BannerViewModel.templateColorido"/>
+        </member>
+        <member name="M:SeminarioMobile.ViewModels.BannerViewModel.OnMesSelecionadoChanged(SeminarioMobile.Models.MesOpcao)">
+            <summary>Executes the logic for when <see cref="P:SeminarioMobile.ViewModels.BannerViewModel.MesSelecionado"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:SeminarioMobile.ViewModels.BannerViewModel.MesSelecionado"/> is changed.</remarks>
+        </member>
+        <member name="M:SeminarioMobile.ViewModels.BannerViewModel.OnTemplateColoridoChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:SeminarioMobile.ViewModels.BannerViewModel.TemplateColorido"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:SeminarioMobile.ViewModels.BannerViewModel.TemplateColorido"/> is changed.</remarks>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.BannerViewModel.carregarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.BannerViewModel.CarregarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.CarregarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.BannerViewModel.CarregarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.BannerViewModel.selecionarMesCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.BannerViewModel.SelecionarMesCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.SelecionarMesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.BannerViewModel.SelecionarMes(SeminarioMobile.Models.MesOpcao)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.BannerViewModel.compartilharCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.BannerViewModel.CompartilharCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.BannerViewModel.CompartilharCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.BannerViewModel.CompartilharAsync"/>.</summary>
+        </member>
+        <member name="T:SeminarioMobile.ViewModels.ClassesViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.Itens">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ClassesViewModel.itens"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.Nome">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ClassesViewModel.nome"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.TituloFormulario">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ClassesViewModel.tituloFormulario"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.EmEdicao">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ClassesViewModel.emEdicao"/>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ClassesViewModel.carregarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ClassesViewModel.CarregarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.CarregarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ClassesViewModel.CarregarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ClassesViewModel.salvarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ClassesViewModel.SalvarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.SalvarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ClassesViewModel.SalvarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ClassesViewModel.editarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ClassesViewModel.EditarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.EditarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ClassesViewModel.Editar(SeminarioMobile.Models.Classe)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ClassesViewModel.cancelarEdicaoCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ClassesViewModel.CancelarEdicaoCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.CancelarEdicaoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ClassesViewModel.CancelarEdicao"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ClassesViewModel.excluirCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ClassesViewModel.ExcluirCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ClassesViewModel.ExcluirCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ClassesViewModel.ExcluirAsync(SeminarioMobile.Models.Classe)"/>.</summary>
+        </member>
+        <member name="T:SeminarioMobile.ViewModels.IgrejasViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.Itens">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.IgrejasViewModel.itens"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.Nome">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.IgrejasViewModel.nome"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.TituloFormulario">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.IgrejasViewModel.tituloFormulario"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.EmEdicao">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.IgrejasViewModel.emEdicao"/>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.IgrejasViewModel.carregarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.IgrejasViewModel.CarregarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.CarregarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.IgrejasViewModel.CarregarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.IgrejasViewModel.salvarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.IgrejasViewModel.SalvarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.SalvarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.IgrejasViewModel.SalvarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.IgrejasViewModel.editarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.IgrejasViewModel.EditarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.EditarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.IgrejasViewModel.Editar(SeminarioMobile.Models.Igreja)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.IgrejasViewModel.cancelarEdicaoCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.IgrejasViewModel.CancelarEdicaoCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.CancelarEdicaoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.IgrejasViewModel.CancelarEdicao"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.IgrejasViewModel.excluirCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.IgrejasViewModel.ExcluirCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.ExcluirCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.IgrejasViewModel.ExcluirAsync(SeminarioMobile.Models.Igreja)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.IgrejasViewModel.ativarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.IgrejasViewModel.AtivarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.IgrejasViewModel.AtivarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.IgrejasViewModel.AtivarAsync(SeminarioMobile.Models.Igreja)"/>.</summary>
+        </member>
+        <member name="T:SeminarioMobile.ViewModels.ImportarPortalViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.CodigoGrupo">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ImportarPortalViewModel.codigoGrupo"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.LogadoNoPortal">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ImportarPortalViewModel.logadoNoPortal"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.Carregando">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ImportarPortalViewModel.carregando"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.MensagemResultado">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ImportarPortalViewModel.mensagemResultado"/>
+        </member>
+        <member name="M:SeminarioMobile.ViewModels.ImportarPortalViewModel.OnCodigoGrupoChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.CodigoGrupo"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.CodigoGrupo"/> is changed.</remarks>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ImportarPortalViewModel.verificarLoginCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.VerificarLoginCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.VerificarLoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ImportarPortalViewModel.VerificarLoginAsync(System.Func{System.String,System.Threading.Tasks.Task{System.String}})"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ImportarPortalViewModel.recarregarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.RecarregarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.RecarregarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ImportarPortalViewModel.RecarregarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ImportarPortalViewModel.importarSelecionadosCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.ImportarSelecionadosCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.ImportarSelecionadosCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ImportarPortalViewModel.ImportarSelecionadosAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ImportarPortalViewModel.desconectarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.DesconectarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ImportarPortalViewModel.DesconectarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ImportarPortalViewModel.Desconectar"/>.</summary>
+        </member>
+        <member name="T:SeminarioMobile.ViewModels.MaanaimViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.Itens">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.MaanaimViewModel.itens"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.Nome">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.MaanaimViewModel.nome"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.TituloFormulario">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.MaanaimViewModel.tituloFormulario"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.EmEdicao">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.MaanaimViewModel.emEdicao"/>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.MaanaimViewModel.carregarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.MaanaimViewModel.CarregarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.CarregarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.MaanaimViewModel.CarregarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.MaanaimViewModel.salvarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.MaanaimViewModel.SalvarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.SalvarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.MaanaimViewModel.SalvarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.MaanaimViewModel.editarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.MaanaimViewModel.EditarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.EditarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.MaanaimViewModel.Editar(SeminarioMobile.Models.Local)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.MaanaimViewModel.cancelarEdicaoCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.MaanaimViewModel.CancelarEdicaoCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.CancelarEdicaoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.MaanaimViewModel.CancelarEdicao"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.MaanaimViewModel.excluirCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.MaanaimViewModel.ExcluirCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.MaanaimViewModel.ExcluirCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.MaanaimViewModel.ExcluirAsync(SeminarioMobile.Models.Local)"/>.</summary>
+        </member>
+        <member name="T:SeminarioMobile.ViewModels.ObservacoesViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.Itens">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ObservacoesViewModel.itens"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.Texto">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ObservacoesViewModel.texto"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.TituloFormulario">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ObservacoesViewModel.tituloFormulario"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.EmEdicao">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.ObservacoesViewModel.emEdicao"/>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ObservacoesViewModel.carregarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ObservacoesViewModel.CarregarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.CarregarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ObservacoesViewModel.CarregarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ObservacoesViewModel.salvarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ObservacoesViewModel.SalvarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.SalvarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ObservacoesViewModel.SalvarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ObservacoesViewModel.editarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ObservacoesViewModel.EditarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.EditarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ObservacoesViewModel.Editar(SeminarioMobile.Models.Observacao)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ObservacoesViewModel.cancelarEdicaoCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ObservacoesViewModel.CancelarEdicaoCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.CancelarEdicaoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ObservacoesViewModel.CancelarEdicao"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ObservacoesViewModel.excluirCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ObservacoesViewModel.ExcluirCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.ExcluirCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ObservacoesViewModel.ExcluirAsync(SeminarioMobile.Models.Observacao)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.ObservacoesViewModel.ativarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.ObservacoesViewModel.AtivarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.ObservacoesViewModel.AtivarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.ObservacoesViewModel.AtivarAsync(SeminarioMobile.Models.Observacao)"/>.</summary>
+        </member>
+        <member name="T:SeminarioMobile.ViewModels.SeminariosViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.Itens">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.itens"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.ItensFiltrados">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.itensFiltrados"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.Locais">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.locais"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.Classes">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.classes"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.Meses">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.meses"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.MesSelecionado">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.mesSelecionado"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.LocalSelecionado">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.localSelecionado"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.ClasseSelecionada">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.classeSelecionada"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.DataInicio">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.dataInicio"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.TemDataFim">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.temDataFim"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.DataFim">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.dataFim"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.InscricoesAte">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.inscricoesAte"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.ValorAdulto">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.valorAdulto"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.ValorCrianca">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.valorCrianca"/>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.TituloFormulario">
+            <inheritdoc cref="F:SeminarioMobile.ViewModels.SeminariosViewModel.tituloFormulario"/>
+        </member>
+        <member name="M:SeminarioMobile.ViewModels.SeminariosViewModel.OnMesSelecionadoChanged(SeminarioMobile.Models.MesOpcao)">
+            <summary>Executes the logic for when <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.MesSelecionado"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.MesSelecionado"/> is changed.</remarks>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.SeminariosViewModel.carregarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.CarregarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.CarregarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.SeminariosViewModel.CarregarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.SeminariosViewModel.selecionarMesCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.SelecionarMesCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.SelecionarMesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.SeminariosViewModel.SelecionarMes(SeminarioMobile.Models.MesOpcao)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.SeminariosViewModel.alternarExpandidoCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.AlternarExpandidoCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.AlternarExpandidoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.SeminariosViewModel.AlternarExpandido(SeminarioMobile.Models.Seminario)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.SeminariosViewModel.salvarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.SalvarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.SalvarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.SeminariosViewModel.SalvarAsync"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.SeminariosViewModel.editarCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.EditarCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.EditarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.SeminariosViewModel.Editar(SeminarioMobile.Models.Seminario)"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.SeminariosViewModel.cancelarEdicaoCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.CancelarEdicaoCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.CancelarEdicaoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.SeminariosViewModel.CancelarEdicao"/>.</summary>
+        </member>
+        <member name="F:SeminarioMobile.ViewModels.SeminariosViewModel.excluirCommand">
+            <summary>The backing field for <see cref="P:SeminarioMobile.ViewModels.SeminariosViewModel.ExcluirCommand"/>.</summary>
+        </member>
+        <member name="P:SeminarioMobile.ViewModels.SeminariosViewModel.ExcluirCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:SeminarioMobile.ViewModels.SeminariosViewModel.ExcluirAsync(SeminarioMobile.Models.Seminario)"/>.</summary>
+        </member>
+        <member name="T:SeminarioMobile.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Selecionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Selecionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Expandido">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Expandido" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Meses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Meses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MesSelecionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MesSelecionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.QuantidadeSeminarios">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "QuantidadeSeminarios" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Gerando">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Gerando" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UltimoCaminhoPng">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UltimoCaminhoPng" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TemplateColorido">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TemplateColorido" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Itens">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Itens" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nome">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nome" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TituloFormulario">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TituloFormulario" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EmEdicao">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EmEdicao" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CodigoGrupo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CodigoGrupo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LogadoNoPortal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LogadoNoPortal" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Carregando">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Carregando" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MensagemResultado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MensagemResultado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Texto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Texto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ItensFiltrados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ItensFiltrados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Locais">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Locais" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Classes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Classes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LocalSelecionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LocalSelecionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ClasseSelecionada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ClasseSelecionada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DataInicio">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DataInicio" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TemDataFim">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TemDataFim" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DataFim">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DataFim" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.InscricoesAte">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "InscricoesAte" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ValorAdulto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ValorAdulto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ValorCrianca">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ValorCrianca" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Selecionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Selecionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Expandido">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Expandido" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Meses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Meses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MesSelecionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MesSelecionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.QuantidadeSeminarios">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "QuantidadeSeminarios" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Gerando">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Gerando" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UltimoCaminhoPng">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UltimoCaminhoPng" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TemplateColorido">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TemplateColorido" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Itens">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Itens" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nome">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nome" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TituloFormulario">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TituloFormulario" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EmEdicao">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EmEdicao" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CodigoGrupo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CodigoGrupo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LogadoNoPortal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LogadoNoPortal" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Carregando">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Carregando" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MensagemResultado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MensagemResultado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Texto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Texto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ItensFiltrados">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ItensFiltrados" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Locais">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Locais" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Classes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Classes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LocalSelecionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LocalSelecionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ClasseSelecionada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ClasseSelecionada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DataInicio">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DataInicio" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TemDataFim">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TemDataFim" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DataFim">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DataFim" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.InscricoesAte">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "InscricoesAte" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ValorAdulto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ValorAdulto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ValorCrianca">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ValorCrianca" generated properties.</summary>
+        </member>
+    </members>
+</doc>

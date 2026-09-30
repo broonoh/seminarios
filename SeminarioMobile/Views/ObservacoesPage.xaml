@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="RaizPagina"
+    x:Class="SeminarioMobile.Views.ObservacoesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:SeminarioMobile.ViewModels"
+    xmlns:models="clr-namespace:SeminarioMobile.Models"
+    x:DataType="vm:ObservacoesViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <ScrollView x:Name="ScrollPrincipal">
+            <VerticalStackLayout Padding="16" Spacing="16">
+
+                <Border Style="{StaticResource HeaderCardStyle}" Background="{StaticResource GradienteObservacoes}">
+                    <HorizontalStackLayout Spacing="14">
+                        <Button Style="{StaticResource MenuButtonStyle}" Clicked="OnMenuClicked" />
+                        <Label Text="📝" Style="{StaticResource HeaderIconStyle}" VerticalOptions="Center" />
+                        <Label Text="Observações" Style="{StaticResource HeaderTitleStyle}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+
+                <Label Text="O texto marcado como ativo é o exibido na faixa 'Obs:' do banner." FontSize="12" TextColor="{AppThemeBinding Light=#64748b, Dark=#CBD5E1}" />
+
+                <Border Style="{StaticResource CardStyle}">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="{Binding TituloFormulario}" FontSize="16" FontAttributes="Bold" TextColor="#14B8A6" />
+                        <Editor Text="{Binding Texto}" AutoSize="TextChanges" MaxLength="240" Placeholder="Os valores referem-se apenas à estadia..." TextColor="#1e293b" />
+                        <HorizontalStackLayout Spacing="8">
+                            <Button Text="Salvar" Command="{Binding SalvarCommand}" BackgroundColor="#14B8A6" TextColor="White" CornerRadius="12" />
+                            <Button Text="Cancelar edição" Command="{Binding CancelarEdicaoCommand}" IsVisible="{Binding EmEdicao}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Label Text="Observações cadastradas" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#4338CA, Dark=#A5B4FC}" />
+
+                <CollectionView ItemsSource="{Binding Itens}">
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout Padding="24" Spacing="6" HorizontalOptions="Center">
+                            <Label Text="📝" FontSize="32" HorizontalOptions="Center" />
+                            <Label Text="Nenhuma observação cadastrada ainda" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#475569, Dark=#E2E8F0}" HorizontalOptions="Center" />
+                            <Label Text="Digite o texto acima e toque em Salvar." FontSize="12" TextColor="{AppThemeBinding Light=#94a3b8, Dark=#CBD5E1}" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Observacao">
+                            <Border Style="{StaticResource ItemCardStyle}">
+                                <VerticalStackLayout Spacing="10">
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Label Text="📝" FontSize="18" VerticalOptions="Center" />
+                                        <Label Grid.Column="1" Text="{Binding Texto}" VerticalOptions="Center" TextColor="#1e293b" Margin="10,0" />
+                                        <Label Grid.Column="2" Text="{Binding Ativo, Converter={StaticResource AtivoParaTextoConverter}}"
+                                               TextColor="{Binding Ativo, Converter={StaticResource AtivoParaCorConverter}}"
+                                               FontAttributes="Bold" VerticalOptions="Center" />
+                                    </Grid>
+                                    <HorizontalStackLayout Spacing="8">
+                                        <Button Text="Usar no banner" Style="{StaticResource AtivarButtonStyle}"
+                                                IsVisible="{Binding Ativo, Converter={StaticResource InversorBoolConverter}}"
+                                                Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.AtivarCommand}"
+                                                CommandParameter="{Binding .}" />
+                                        <Button Text="Editar" Style="{StaticResource EditButtonStyle}"
+                                                Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.EditarCommand}"
+                                                CommandParameter="{Binding .}" />
+                                        <Button Text="Excluir" Style="{StaticResource DeleteButtonStyle}"
+                                                Command="{Binding Source={x:Reference RaizPagina}, Path=BindingContext.ExcluirCommand}"
+                                                CommandParameter="{Binding .}" />
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button Text="↑" Style="{StaticResource FabStyle}" BackgroundColor="#14B8A6" Clicked="OnFabClicked" />    </Grid>
+</ContentPage>

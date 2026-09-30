@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SeminarioMobile.Views.ImportarPortalPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:SeminarioMobile.ViewModels"
+    xmlns:models="clr-namespace:SeminarioMobile.Models"
+    x:DataType="vm:ImportarPortalViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <Border Grid.Row="0" Style="{StaticResource HeaderCardStyle}" Background="{StaticResource GradienteImportar}">
+            <HorizontalStackLayout Spacing="14">
+                <Button Style="{StaticResource MenuButtonStyle}" Clicked="OnMenuClicked" />
+                <Label Text="⬇️" Style="{StaticResource HeaderIconStyle}" VerticalOptions="Center" />
+                <Label Text="Importar do Portal" Style="{StaticResource HeaderTitleStyle}" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+        </Border>
+
+        <!-- Passo 1: login no portal, dentro de um WebView -->
+        <Grid Grid.Row="1" Padding="16" RowDefinitions="Auto,*" IsVisible="{Binding LogadoNoPortal, Converter={StaticResource InversorBoolConverter}}">
+            <Label Grid.Row="0" Text="Faça login no portal do presbitério abaixo. Assim que o login for detectado, a lista de seminários abertos aparece automaticamente." FontSize="12" TextColor="#64748b" Margin="0,0,0,12" />
+            <WebView x:Name="WebViewPortal" Grid.Row="1" Source="https://portal.presbiterio.org.br/minscricao#/" />
+        </Grid>
+
+        <!-- Passo 2: lista de eventos do portal para seleção e importação -->
+        <ScrollView Grid.Row="1" IsVisible="{Binding LogadoNoPortal}">
+            <VerticalStackLayout Padding="16" Spacing="16">
+
+                <Border Style="{StaticResource CardStyle}">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Código do grupo/presbitério" FontSize="13" TextColor="#64748b" />
+                        <HorizontalStackLayout Spacing="8">
+                            <Entry Text="{Binding CodigoGrupo}" Keyboard="Numeric" WidthRequest="120" TextColor="#1e293b" />
+                            <Button Text="Atualizar lista" Command="{Binding RecarregarCommand}" BackgroundColor="#3B82F6" TextColor="White" CornerRadius="12" />
+                        </HorizontalStackLayout>
+                        <Button Text="Trocar conta" Command="{Binding DesconectarCommand}" BackgroundColor="Transparent" TextColor="#DC2626" HorizontalOptions="Start" Padding="0" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <ActivityIndicator IsRunning="{Binding Carregando}" IsVisible="{Binding Carregando}" Color="#3B82F6" />
+
+                <Label Text="{Binding MensagemResultado}" IsVisible="{Binding MensagemResultado, Converter={StaticResource NaoNuloParaTrueConverter}}" FontSize="13" TextColor="#16a34a" FontAttributes="Bold" />
+
+                <CollectionView ItemsSource="{Binding Eventos}">
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout Padding="24" Spacing="6" HorizontalOptions="Center">
+                            <Label Text="⬇️" FontSize="32" HorizontalOptions="Center" />
+                            <Label Text="Nenhum evento encontrado para este código de grupo" FontAttributes="Bold" TextColor="#475569" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:EventoPortal">
+                            <Border Style="{StaticResource ItemCardStyle}">
+                                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                                    <CheckBox Grid.Column="0" IsChecked="{Binding Selecionado}" Color="#3B82F6" VerticalOptions="Start" />
+                                    <VerticalStackLayout Grid.Column="1" Spacing="4">
+                                        <Label Text="{Binding Classe}" FontAttributes="Bold" TextColor="#3B82F6" LineBreakMode="WordWrap" />
+                                        <Label Text="{Binding Local}" FontSize="12" TextColor="#475569" />
+                                        <Label Text="{Binding DataEvento, StringFormat='Data: {0}'}" FontSize="12" TextColor="#1e293b" />
+                                        <Label Text="{Binding InscricoesAte, StringFormat='Inscrições até: {0}'}" FontSize="12" TextColor="#1e293b" />
+                                        <Label Text="{Binding ValorAdulto, StringFormat='Adulto: R$ {0:N2}'}" FontSize="12" TextColor="#16a34a" FontAttributes="Bold" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Text="Importar selecionados" Command="{Binding ImportarSelecionadosCommand}"
+                        IsEnabled="{Binding Carregando, Converter={StaticResource InversorBoolConverter}}"
+                        BackgroundColor="#9333EA" TextColor="White" CornerRadius="14" Padding="18,12" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
